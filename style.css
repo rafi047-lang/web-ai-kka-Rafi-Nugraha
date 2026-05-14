@@ -1,0 +1,730 @@
+:root {
+  --primary: #2196f3;        /* Biru langit */
+  --primary-dark: #0d47a1;  /* Biru tua */
+  --primary-light: #e3f2fd; /* Biru sangat muda */
+  --secondary: #082567;     /* Biru navy */
+  --dark: #031b4e;          /* Biru gelap */
+  --gray: #5f6f8c;
+  --light-bg: #f4f9ff;      /* Putih kebiruan */
+  --white: #ffffff;
+
+  --shadow-sm: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 30px 50px -15px rgba(0, 0, 0, 0.12);
+
+  --border-radius: 28px;
+  --border-radius-sm: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  gap: 60px; /* jarak logo/tulisan dengan menu */
+}
+.logo {
+  display: flex;
+  align-items: center; /* logo sejajar tengah dengan teks */
+  gap: 12px; /* jarak logo dan tulisan */
+}
+
+.logo img {
+  width: 70px; /* ukuran logo */
+  height: auto;
+}
+
+.logo-text h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.logo-text span {
+  font-size: 14px;
+  color: #666;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  margin-left: 390px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--dark);
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7f3 100%);
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-badge {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 20px rgba(30, 107, 76, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(30, 107, 76, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 40px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(30,107,76,0.1) 0%, rgba(30,107,76,0) 70%);
+  top: -40px;
+  right: -40px;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(15,59,44,0.08) 0%, rgba(15,59,44,0) 70%);
+  bottom: -30px;
+  left: -30px;
+}
+
+/* ========== SAMBUTAN ========== */
+.sambutan {
+  padding: 80px 0;
+}
+
+.sambutan-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 48px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quote-icon {
+  font-size: 3rem;
+  color: var(--primary);
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.sambutan-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.sambutan-card p {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.sambutan-quote {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.kepala-sekolah {
+  margin-top: 24px;
+}
+
+.kepala-sekolah h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.kepala-sekolah span {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* ========== PROFIL SEKOLAH ========== */
+.profil-sekolah {
+  padding: 0 0 80px 0;
+}
+
+.profil-wrapper {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: var(--border-radius);
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.profil-icon {
+  font-size: 4rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.profil-text {
+  flex: 1;
+}
+
+.profil-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.profil-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.akreditasi-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 8px 20px;
+  border-radius: 40px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ========== JURUSAN SECTION ========== */
+.jurusan {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-header.left-align {
+  text-align: left;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 5px 16px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.jurusan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.jurusan-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 28px;
+  transition: all 0.4s;
+  border: 1px solid #eef2f0;
+  box-shadow: var(--shadow-sm);
+}
+
+.jurusan-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  background: var(--primary-light);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.jurusan-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.prospek-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.prospek ul {
+  list-style: none;
+}
+
+.prospek li {
+  font-size: 0.85rem;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray);
+}
+
+.prospek li i {
+  color: var(--primary);
+  width: 18px;
+  font-size: 0.75rem;
+}
+
+/* ========== GALERI ========== */
+.galeri {
+  padding: 80px 0;
+  background: var(--light-bg);
+}
+
+.galeri-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.galeri-item {
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  width: 280px;
+  transition: all 0.3s;
+  box-shadow: var(--shadow-sm);
+}
+
+.galeri-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.galeri-img {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.galeri-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galeri-info {
+  padding: 18px;
+}
+
+.galeri-info h4 {
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.galeri-info p {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* ========== KONTAK ========== */
+.kontak {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.kontak-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  background: var(--light-bg);
+  border-radius: 32px;
+  padding: 48px;
+}
+
+.kontak-info {
+  flex: 1;
+}
+
+.kontak-detail {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.kontak-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.kontak-item i {
+  font-size: 1.5rem;
+  color: var(--primary);
+  width: 40px;
+}
+
+.kontak-item strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--dark);
+}
+
+.kontak-item p {
+  color: var(--gray);
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.map-btn:hover {
+  background: var(--primary-dark);
+  transform: translateX(5px);
+}
+
+.kontak-map {
+  flex: 1;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #e8f2ef, #d4e5dd);
+  border-radius: 24px;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  color: var(--primary);
+}
+
+.map-placeholder i {
+  font-size: 3rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--secondary);
+  color: #cbddd4;
+  padding: 48px 0 32px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.footer-logo p {
+  font-size: 0.85rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.social-links a {
+  color: #cbddd4;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+.footer-copyright p {
+  font-size: 0.8rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .nav-menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 16px;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-container {
+    flex-direction: column;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .kontak-wrapper {
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-primary, .btn-outline {
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .jurusan-grid {
+    grid-template-columns: 1fr;
+  }
+}
